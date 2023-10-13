@@ -1,11 +1,14 @@
 package br.com.atilara.todolist.task;
 
+import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+
+import java.util.UUID;
 
 @RestController
 @RequestMapping("/tasks")
@@ -15,7 +18,9 @@ public class TaskController {
     private ITaskRepository taskRepository;
 
     @PostMapping("/create")
-    public ResponseEntity create(@RequestBody TaskModel taskModel) {
+    public ResponseEntity create(@RequestBody TaskModel taskModel, HttpServletRequest request) {
+        var userId = (UUID) request.getAttribute("userId");
+        taskModel.setUserId(userId);
         return ResponseEntity.ok(this.taskRepository.save(taskModel));
     }
 
