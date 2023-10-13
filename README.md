@@ -14,7 +14,7 @@ Before you begin, ensure you have the following installed on your system:
 
 - Java Development Kit (JDK) 17
 - Maven (for building and running the project)
-- PostgreSQL (or any other relational database)
+- PostgreSQL
 
 ## Authentication
 
