@@ -10,7 +10,7 @@
 	</parent>
 	<groupId>br.com.atilara</groupId>
 	<artifactId>todolist</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>1.0.0</version>
 	<name>todolist</name>
 	<description>Gerenciador de tarefas</description>
 	<properties>
@@ -51,6 +51,16 @@
 			<groupId>at.favre.lib</groupId>
 			<artifactId>bcrypt</artifactId>
 			<version>0.10.2</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springdoc</groupId>
+			<artifactId>springdoc-openapi-starter-webmvc-ui</artifactId>
+			<version>2.0.0</version>
+		</dependency>
+		<dependency>
+			<groupId>org.hibernate</groupId>
+			<artifactId>hibernate-validator</artifactId>
+			<version>8.0.1.Final</version>
 		</dependency>
 	</dependencies>
 

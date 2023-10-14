@@ -26,9 +26,10 @@ public class FilterTaskAuth extends OncePerRequestFilter {
     ) throws ServletException, IOException {
 
         var servletPath = request.getServletPath();
-        System.out.println(servletPath);
-        System.out.println(servletPath.startsWith("/users"));
-        if (servletPath.startsWith("/users")) {
+        System.out.println(servletPath.startsWith("/swagger-ui"));
+        System.out.println(servletPath.startsWith("/v3/api-docs/swagger-config"));
+        if (servletPath.startsWith("/users") || servletPath.startsWith("/swagger-ui")
+                || servletPath.startsWith("/v3/api-docs")) {
             filterChain.doFilter(request, response);
             return;
         }
